@@ -5,12 +5,11 @@ class PostsController < ApplicationController
       # @post ="これはコントローラーで定義したインスタンス変数を確認するための文字列です"
       # @post = Post.find(1)  # 1番目のレコードを@postに代入
 
-      @posts = Post.all  # すべてのレコードを@postsに代入
-  def new
-        # ファームの実装の新しいアクションの指令
+      @posts = Post.all.order(id: "DESC")
+  
   def create
     Post.create(content: params[:aa])
-  end
+    redirect_to action: :index
   end
   end
 end
