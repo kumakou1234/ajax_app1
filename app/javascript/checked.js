@@ -22,6 +22,7 @@ function check() {
         XHR.send();
         // ここでコントローラーに欲しいデータの送信
         XHR.onload = () => {
+          // レスポンスの受信が成功した時に呼び出されるもの
           if (XHR.status != 200) {
             alert(`Error ${XHR.status}: ${XHR.statusText}`);
             return null;
